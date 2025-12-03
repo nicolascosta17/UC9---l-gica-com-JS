@@ -1,7 +1,7 @@
 const { log } = require("node:console");
 const input = require("../input"); // importa funcionalidade do input
 // Atividade bancária
-(async () => {
+(async () => { // Função anônima
     let saldo = 300
     console.log("⭐ Bem-vindo ao sistema Nick's Bank 🏦💸");
     console.log("Digite 1-depositar 2-sacar: ");
