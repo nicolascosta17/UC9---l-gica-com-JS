@@ -32,7 +32,7 @@ Nível de Dificuldade 1:
 
 Nível de Dificuldade 2: 
 
-16-    Calculadora de Gorjeta: Peça o total da conta e a porcentagem da gorjeta, calcule e imprima a gorjeta e o total final.
+16-    Calculadora de Gorjeta: Peça o total da conta e a porcentagem da gorjeta, calcule e imprima a gorjeta e o total final.~L
 
 17-    Extrator de Dígitos: Peça um número de 3 dígitos. Extraia e imprima cada dígito.
 
