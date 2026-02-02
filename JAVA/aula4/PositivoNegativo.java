@@ -12,8 +12,11 @@ public class PositivoNegativo {
 
         if (num < 0){
             System.out.println("Este número é negativo.");
-        } else{
+        } else if(num > 0){
             System.out.println("Este número é positivo");
+        }
+        else{
+            System.out.println("Este número é igual à 0");
         }
 
     }
