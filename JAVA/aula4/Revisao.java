@@ -47,7 +47,7 @@ public class Revisao { //public ==> Revisao.java
     }
 
     /*
-    Operadores Aritmeticos:
+    Operadores Lógicos:
 
     and ==> &&
     or ==> ||
