@@ -1,3 +1,9 @@
+/*
+Exercício 2 - Maior de Idade
+Peça a idade do usuário e informe se ele é "Maior de idade" 
+(18 anos ou mais) ou "Menor de idade".
+*/
+
 package exercicioIfElse;
 
 import java.util.Scanner;

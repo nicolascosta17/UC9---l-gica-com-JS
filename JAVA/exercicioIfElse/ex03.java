@@ -1,3 +1,8 @@
+/*
+Exercício 3 - Comparador Simples
+Receba dois números e informe qual é o maior, ou se são iguais.
+*/
+
 package exercicioIfElse;
 
 import java.util.Scanner;

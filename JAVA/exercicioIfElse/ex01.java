@@ -1,3 +1,9 @@
+/*
+Exercício 1 - Par ou Ímpar
+Crie um programa que receba um número 
+inteiro e imprima se ele é "Par" ou "Ímpar".
+*/
+
 package exercicioIfElse;
 
 import java.util.Scanner;
