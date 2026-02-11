@@ -17,8 +17,7 @@ public class ex10 {
         double compraValor = entradaUser.nextDouble();
 
         if(compraValor > 100){
-            double porcentagemDesconto = 10/100;
-            double desconto = compraValor * porcentagemDesconto;
+            double desconto = compraValor * (10.0 / 100);
             double valorTotal = compraValor - desconto;
             System.out.println("Valor total da compra: R$" + valorTotal);
         }else{
