@@ -12,6 +12,7 @@ public class ex10 {
     public static void main(String[] args) {
         Scanner entradaUser = new Scanner(System.in);
 
+        
         System.out.println("Digite o valor da compra: ");
         double compraValor = entradaUser.nextDouble();
 
