@@ -14,16 +14,24 @@ public class ex16 {
 
         System.out.println("Digite a senha: ");
         String password = entradaUser.nextLine();
-        boolean temNumero = password.matches(".*\\d.*"); // matches: Semelhante
+        boolean temNumero = false;
 
-        for(password.length() == 2){
-            
+        for(int i = 0; i < password.length(); i++){ // verifica posição por posição
+
+            char caracteres = password.charAt(i); // Pega o caracter da variável "password" e guarda na variável "caracter"
+            // password.charAt(i): “Me dá a letra que está na posição i da senha”
+
+            if(Character.isDigit(caracteres)){ // Verifica se tem número na variável
+                temNumero = true;
+                break;
+            }
+
         }
 
-        // if((password.length() < 8) && (temNumero)){
-        //     System.out.println("Senha válida");
-        // }else {
-        //     System.out.println("Senha inválida!");
-        // }
+        if((password.length() >= 8) && (temNumero)){
+            System.out.println("Senha válida");
+        }else {
+            System.out.println("Senha inválida!");
+        }
     }
 }
