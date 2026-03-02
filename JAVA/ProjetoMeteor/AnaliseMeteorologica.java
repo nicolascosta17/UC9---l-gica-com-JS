@@ -1,7 +1,9 @@
 package ProjetoMeteor;
 
+import javax.print.attribute.standard.Media;
+
 public class AnaliseMeteorologica {
-    public static void FormatacaoTexto(double[][] temp, int[][] um){
+    public static void FormatacaoTexto(double[][] temp, int[][] um, double MediaGeral){
         System.out.print("======================================================\r\n");
         System.out.print("      SISTEMA DE ANÁLISE METEOROLÓGICA INTELIGENTE\r\n");
         System.out.print("====================================================== \n\n");
@@ -33,8 +35,23 @@ public class AnaliseMeteorologica {
                     + classsificacao
                     + alertaTexto);
         }
-        System.out.println("-------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------- \n");
+        System.out.println("ESTATÍSTICAS GERAIS:");
+        System.out.println("• Temperatura média geral: "+MediaGeral+"°C");
         
+    }
+    public static double calcularMediaGeral(double[][] temperaturas){
+        double somaMedias = 0;
+
+        for(int i = 0; i < temperaturas.length; i++){
+            double mediaCidade = (temperaturas[i][0] * 0.7)
+                            + (temperaturas[i][1] * 0.3);
+
+            somaMedias += mediaCidade;
+        }
+
+        double mediaFinal = somaMedias / temperaturas.length;
+        return Math.round(mediaFinal * 10.0) / 10.0;
     }
     public static void calcularMediaPonderadaTemperatura(double max, double min){
         if (min >= -50 && max <= 60 ) {
@@ -51,9 +68,6 @@ public class AnaliseMeteorologica {
         }else{
             return "QUENTE MODERADO   | ";
         }
-    }
-    public static void identificarCidadeComMaiorAmplitudeTermica(){
-
     }
     public static double calcularIndiceCalor(double temp, int umidade){
         double indiceCalor = temp + 0.5 * (umidade / 100.0) * (temp - 20);
@@ -89,9 +103,8 @@ public class AnaliseMeteorologica {
             {82, 58, 72},  // Cidade 4
             {75, 50, 68}   // Cidade 5
         };
-
-        FormatacaoTexto(temperaturas, umidades);
-
+        double mediaGeral = calcularMediaGeral(temperaturas);
+        FormatacaoTexto(temperaturas, umidades, mediaGeral);
 
     }
 }
