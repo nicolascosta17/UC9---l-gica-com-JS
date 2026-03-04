@@ -37,7 +37,8 @@ public class AnaliseMeteorologica {
         }
         System.out.println("------------------------------------------------------------------- \n");
         System.out.println("ESTATÍSTICAS GERAIS:");
-        System.out.println("• Temperatura média geral: "+MediaGeral+"°C");
+        System.out.println("- Temperatura média geral: "+MediaGeral+"°C");
+        System.out.println("- Cidade mais quente: "++" ( "++"°C)");
         
     }
     public static double calcularMediaGeral(double[][] temperaturas){
