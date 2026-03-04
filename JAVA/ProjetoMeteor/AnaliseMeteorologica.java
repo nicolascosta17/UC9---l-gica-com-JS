@@ -3,7 +3,7 @@ package ProjetoMeteor;
 import javax.print.attribute.standard.Media;
 
 public class AnaliseMeteorologica {
-    public static void FormatacaoTexto(double[][] temp, int[][] um, double MediaGeral){
+    public static void FormatacaoTexto(double[][] temp, int[][] um, double mediaGeral, double cidadeMaisQuente,int idCidadeMaisFria, int idCidades, double cidadeMaisFria){
         System.out.print("======================================================\r\n");
         System.out.print("      SISTEMA DE ANÁLISE METEOROLÓGICA INTELIGENTE\r\n");
         System.out.print("====================================================== \n\n");
@@ -37,9 +37,59 @@ public class AnaliseMeteorologica {
         }
         System.out.println("------------------------------------------------------------------- \n");
         System.out.println("ESTATÍSTICAS GERAIS:");
-        System.out.println("- Temperatura média geral: "+MediaGeral+"°C");
-        System.out.println("- Cidade mais quente: "++" ( "++"°C)");
+        System.out.println("- Temperatura média geral: "+mediaGeral+"°C");
+        System.out.println("- Cidade mais quente: #" + (idCidades + 1) +
+                " com (" + cidadeMaisQuente + "°C)");
+        System.out.println("- Cidade mais fria: #" + (idCidadeMaisFria + 1) + 
+                " com (" + cidadeMaisFria + "°C)");
         
+    }
+    public static int IdCidadeMaisQuente(double[][] city){
+        double maior = city[0][0];
+        int idMaior = 0;
+
+        for(int i = 0; i < city.length; i++){
+            if(city[i][0] > maior){
+                maior = city[i][0];
+                idMaior = i;
+            }
+        }
+        return idMaior;
+    }
+    public static int IdCidadeMaisFria(double[][] city){
+        double menor = city[0][0];
+        int idMenor = 0;
+
+        for(int i = 0; i < city.length; i++){
+            if(city[i][0] < menor){
+                menor = city[i][0];
+                idMenor = i;
+            }
+        }
+
+        return idMenor;
+    }
+    public static double CidadeMaisQuente(double[][] city){
+        double maior = city[0][0];
+
+        for(int i = 0; i < city.length; i++){
+            if(city[i][0] > maior){
+                maior = city[i][0];
+            }
+        }
+
+        return maior;
+    }
+    public static double CidadeMaisFria(double[][] city){
+        double menor = city[0][1];
+
+            for(int i = 1; i < city.length; i++){
+                if(city[i][1] < menor){
+                    menor = city[i][1];
+                }
+            }
+
+        return menor;
     }
     public static double calcularMediaGeral(double[][] temperaturas){
         double somaMedias = 0;
@@ -104,8 +154,13 @@ public class AnaliseMeteorologica {
             {82, 58, 72},  // Cidade 4
             {75, 50, 68}   // Cidade 5
         };
+        int idCidadeMaisFria = IdCidadeMaisFria(temperaturas);
+        int idCidadeMaisQuente = IdCidadeMaisQuente(temperaturas);
+        double cidadeMaisFria = CidadeMaisFria(temperaturas);
+        double cidadeMaisQuente = CidadeMaisQuente(temperaturas);
         double mediaGeral = calcularMediaGeral(temperaturas);
-        FormatacaoTexto(temperaturas, umidades, mediaGeral);
+
+        FormatacaoTexto(temperaturas, umidades, mediaGeral, cidadeMaisQuente, idCidadeMaisFria, idCidadeMaisQuente, cidadeMaisFria);
 
     }
 }
